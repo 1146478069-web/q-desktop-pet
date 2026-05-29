@@ -6,6 +6,9 @@ export interface Avatar {
   createdAt: string;
 }
 
+export type PetVisualMode = "classic" | "paper3d";
+export type PetMotionIntensity = "soft" | "lively";
+
 export interface AppSettings {
   activeAvatarId: string | null;
   petSize: number;
@@ -13,6 +16,8 @@ export interface AppSettings {
   animationsEnabled: boolean;
   bubblesEnabled: boolean;
   audioEffects: Partial<Record<AudioEffectKind, AudioEffect>>;
+  visualMode: PetVisualMode;
+  motionIntensity: PetMotionIntensity;
 }
 
 export type AudioEffectKind = "poke" | "annoyed" | "reward";

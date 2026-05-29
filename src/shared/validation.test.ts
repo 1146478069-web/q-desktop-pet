@@ -72,3 +72,21 @@ describe("mergeSettings", () => {
     });
   });
 });
+
+describe("mergeSettings visual settings", () => {
+  it("keeps valid 2.5D visual settings", () => {
+    expect(mergeSettings({ visualMode: "classic", motionIntensity: "soft" })).toEqual({
+      ...DEFAULT_SETTINGS,
+      visualMode: "classic",
+      motionIntensity: "soft",
+    });
+  });
+
+  it("falls back to defaults for invalid visual settings", () => {
+    expect(mergeSettings({ visualMode: "neon" as never, motionIntensity: "wild" as never })).toEqual({
+      ...DEFAULT_SETTINGS,
+      visualMode: "paper3d",
+      motionIntensity: "lively",
+    });
+  });
+});

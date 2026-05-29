@@ -1,0 +1,8 @@
+node_modules/
+dist/
+release/
+.npm-cache/
+.electron-cache/
+.tools/
+.superpowers/
+.runtime.log

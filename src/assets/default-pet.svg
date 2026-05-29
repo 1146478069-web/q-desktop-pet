@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Default desktop pet</title>
+  <desc id="desc">A cute round fallback pet with ears, paws, and a happy face.</desc>
+  <defs>
+    <linearGradient id="fur" x1="64" x2="192" y1="34" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe7a8"/>
+      <stop offset="1" stop-color="#f6a96d"/>
+    </linearGradient>
+    <linearGradient id="belly" x1="92" x2="164" y1="120" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7dd"/>
+      <stop offset="1" stop-color="#ffd79b"/>
+    </linearGradient>
+  </defs>
+  <path fill="#d77953" d="M66 86 84 38c4-10 18-8 20 3l8 43z"/>
+  <path fill="#d77953" d="m190 86-18-48c-4-10-18-8-20 3l-8 43z"/>
+  <path fill="#ffc5a0" d="m82 74 10-27 6 30z"/>
+  <path fill="#ffc5a0" d="m174 74-10-27-6 30z"/>
+  <ellipse cx="128" cy="138" rx="82" ry="88" fill="url(#fur)"/>
+  <ellipse cx="128" cy="162" rx="46" ry="52" fill="url(#belly)" opacity=".92"/>
+  <circle cx="95" cy="121" r="12" fill="#53352d"/>
+  <circle cx="161" cy="121" r="12" fill="#53352d"/>
+  <circle cx="99" cy="116" r="4" fill="#fff8e7"/>
+  <circle cx="165" cy="116" r="4" fill="#fff8e7"/>
+  <path fill="#7d4a3c" d="M120 141c0-5 4-9 8-9s8 4 8 9-4 8-8 8-8-3-8-8z"/>
+  <path fill="none" stroke="#7d4a3c" stroke-linecap="round" stroke-width="7" d="M128 148c-7 15-25 13-30 2m30-2c7 15 25 13 30 2"/>
+  <path fill="#f28f75" d="M67 141c11-11 26-9 32 2-10 9-23 9-32-2zm122 0c-11-11-26-9-32 2 10 9 23 9 32-2z" opacity=".55"/>
+  <ellipse cx="70" cy="199" rx="24" ry="19" fill="#e98d61"/>
+  <ellipse cx="186" cy="199" rx="24" ry="19" fill="#e98d61"/>
+  <path fill="#fff1cb" d="M83 197c0 5-5 9-11 9s-11-4-11-9 5-8 11-8 11 3 11 8zm112 0c0 5-5 9-11 9s-11-4-11-9 5-8 11-8 11 3 11 8z"/>
+</svg>

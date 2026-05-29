@@ -118,21 +118,11 @@ body {
   z-index: 2;
   display: block;
   transform: translateZ(18px);
-  filter: saturate(1.06) contrast(1.03);
-}
-
-.pet-depth {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0.36;
-  pointer-events: none;
-  transform: translateZ(-18px) translateX(10px) rotateY(54deg);
-  transform-origin: 50% 86%;
-  filter: brightness(0) saturate(1) invert(38%) sepia(16%) saturate(875%) hue-rotate(170deg) opacity(0.62);
+  filter:
+    saturate(1.06)
+    contrast(1.03)
+    drop-shadow(8px 1px 0 rgba(72, 91, 118, 0.22))
+    drop-shadow(13px 2px 0 rgba(72, 91, 118, 0.12));
 }
 
 .pet-shadow {
@@ -712,7 +702,6 @@ const js = String.raw`
         '    <span class="pet-sparkles"><i></i><i></i><i></i></span>',
         '    <span class="pet-sleep-marks"><i>z</i><i>Z</i></span>',
         '    <span class="pet-paper">',
-        '      <img class="pet-depth" src="' + src + '" alt="" draggable="false" />',
         '      <img class="pet-avatar" src="' + src + '" alt="" draggable="false" />',
         '    </span>',
       ].join("")

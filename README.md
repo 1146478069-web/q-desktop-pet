@@ -8,6 +8,7 @@ A cute Windows desktop pet built with Electron.
 - Upload avatar images and turn them into local pet assets.
 - Simple local background cutout for centered character images.
 - 2.5D paper-character mode that keeps your uploaded image as the pet body.
+- 2.5D depth uses outer contour shadows so facial details stay clean.
 - Soft/lively motion intensity controls.
 - Left click poke reactions with escalating annoyance.
 - Long left press petting/reward reaction.

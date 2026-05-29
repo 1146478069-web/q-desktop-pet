@@ -22,8 +22,11 @@ describe("standalone renderer build", () => {
     expect(appJs).toContain('id="visualMode"');
     expect(appJs).toContain('data-intensity="soft"');
     expect(appJs).toContain('data-intensity="lively"');
+    expect(appJs).not.toContain('class="pet-depth"');
     expect(styleCss).toContain(".pet-button--paper3d");
     expect(styleCss).toContain(".pet-action--annoyed");
     expect(styleCss).toContain("@keyframes pet-paper-carried");
+    expect(styleCss).not.toContain("brightness(0)");
+    expect(styleCss).toContain("drop-shadow(8px 1px 0 rgba(72, 91, 118, 0.22))");
   });
 });

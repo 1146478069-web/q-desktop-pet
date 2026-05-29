@@ -147,7 +147,6 @@ export function PetWindow() {
           <>
             <span className="pet-shadow" />
             <span className="pet-paper">
-              <img className="pet-depth" src={avatarSrc} alt="" draggable={false} />
               <img className="pet-avatar" src={avatarSrc} alt="" draggable={false} />
             </span>
           </>

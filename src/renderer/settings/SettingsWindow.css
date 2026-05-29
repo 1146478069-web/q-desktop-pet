@@ -8,7 +8,8 @@
 }
 
 .settings-window button,
-.settings-window input {
+.settings-window input,
+.settings-window select {
   font: inherit;
 }
 
@@ -195,8 +196,18 @@
   accent-color: #1f6feb;
 }
 
+.toggle-row select {
+  min-width: 132px;
+  min-height: 34px;
+  border: 1px solid #d9e0e8;
+  border-radius: 8px;
+  background: #fff;
+  color: #17202a;
+}
+
 .settings-window button:focus-visible,
-.settings-window input:focus-visible {
+.settings-window input:focus-visible,
+.settings-window select:focus-visible {
   outline: 2px solid #1f6feb;
   outline-offset: 2px;
 }

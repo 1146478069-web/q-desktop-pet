@@ -26,6 +26,7 @@ body {
 }
 
 .pet-button {
+  position: relative;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -36,6 +37,28 @@ body {
   filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.28));
   transform-origin: 50% 88%;
   -webkit-app-region: no-drag;
+}
+
+.pet-button--classic {
+  overflow: visible;
+}
+
+.pet-button--paper3d {
+  overflow: visible;
+  perspective: 760px;
+  transform-style: preserve-3d;
+  --idle-speed: 3.7s;
+  --turn-depth: 18deg;
+}
+
+.pet-motion--soft {
+  --idle-speed: 5.4s;
+  --turn-depth: 11deg;
+}
+
+.pet-motion--lively {
+  --idle-speed: 3.4s;
+  --turn-depth: 24deg;
 }
 
 .pet-button--idle {
@@ -58,6 +81,55 @@ body {
   height: 100%;
   object-fit: contain;
   pointer-events: none;
+}
+
+.pet-paper {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 50% 86%;
+}
+
+.pet-button--paper3d .pet-avatar {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(18px);
+  filter: saturate(1.06) contrast(1.03);
+}
+
+.pet-depth {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.36;
+  pointer-events: none;
+  transform: translateZ(-18px) translateX(10px) rotateY(54deg);
+  transform-origin: 50% 86%;
+  filter: brightness(0) saturate(1) invert(38%) sepia(16%) saturate(875%) hue-rotate(170deg) opacity(0.62);
+}
+
+.pet-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  z-index: 0;
+  width: 66%;
+  height: 18%;
+  border-radius: 50%;
+  background: rgba(24, 34, 48, 0.26);
+  filter: blur(4px);
+  transform: translateX(-50%) rotateX(70deg) translateZ(-62px);
+  pointer-events: none;
+}
+
+.pet-action--idle .pet-paper {
+  animation: pet-paper-idle var(--idle-speed) ease-in-out infinite;
 }
 
 .pet-bubble {
@@ -119,5 +191,16 @@ body {
 
   100% {
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pet-paper-idle {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(calc(var(--turn-depth) * -0.55)) rotateZ(-1deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotateY(var(--turn-depth)) rotateZ(1deg);
   }
 }

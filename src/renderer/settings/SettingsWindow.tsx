@@ -173,6 +173,28 @@ export function SettingsWindow() {
           </label>
 
           <label className="toggle-row">
+            <span>2.5D paper effect</span>
+            <input
+              type="checkbox"
+              checked={settings.visualMode === "paper3d"}
+              onChange={(event) => updateSettings({ visualMode: event.currentTarget.checked ? "paper3d" : "classic" })}
+            />
+          </label>
+
+          <label className="toggle-row">
+            <span>Motion intensity</span>
+            <select
+              value={settings.motionIntensity}
+              onChange={(event) =>
+                updateSettings({ motionIntensity: event.currentTarget.value as AppSettings["motionIntensity"] })
+              }
+            >
+              <option value="soft">Soft</option>
+              <option value="lively">Lively</option>
+            </select>
+          </label>
+
+          <label className="toggle-row">
             <span>Always on top</span>
             <input
               type="checkbox"

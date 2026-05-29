@@ -120,6 +120,9 @@ export function PetWindow() {
   }
 
   const petSize = settings.petSize;
+  const isPaper3d = settings.visualMode === "paper3d";
+  const visualModeClass = isPaper3d ? "pet-button--paper3d pet-action--idle" : "pet-button--classic";
+  const intensityClass = settings.motionIntensity === "soft" ? "pet-motion--soft" : "pet-motion--lively";
   const shellStyle = { "--pet-size": `${petSize}px` } as CSSProperties;
 
   return (
@@ -128,8 +131,10 @@ export function PetWindow() {
       <button
         className={[
           "pet-button",
-          settings.animationsEnabled ? "pet-button--idle" : "",
-          isBouncing ? "pet-button--bounce" : "",
+          visualModeClass,
+          intensityClass,
+          settings.animationsEnabled && !isPaper3d ? "pet-button--idle" : "",
+          isBouncing && !isPaper3d ? "pet-button--bounce" : "",
         ]
           .filter(Boolean)
           .join(" ")}
@@ -138,7 +143,17 @@ export function PetWindow() {
         onClick={handlePetClick}
         style={{ width: petSize, height: petSize }}
       >
-        <img className="pet-avatar" src={avatarSrc} alt="" draggable={false} />
+        {isPaper3d ? (
+          <>
+            <span className="pet-shadow" />
+            <span className="pet-paper">
+              <img className="pet-depth" src={avatarSrc} alt="" draggable={false} />
+              <img className="pet-avatar" src={avatarSrc} alt="" draggable={false} />
+            </span>
+          </>
+        ) : (
+          <img className="pet-avatar" src={avatarSrc} alt="" draggable={false} />
+        )}
       </button>
     </main>
   );

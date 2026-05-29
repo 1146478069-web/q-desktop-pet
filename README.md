@@ -7,6 +7,8 @@ A cute Windows desktop pet built with Electron.
 - Transparent always-on-top desktop pet window.
 - Upload avatar images and turn them into local pet assets.
 - Simple local background cutout for centered character images.
+- 2.5D paper-character mode that keeps your uploaded image as the pet body.
+- Soft/lively motion intensity controls.
 - Left click poke reactions with escalating annoyance.
 - Long left press petting/reward reaction.
 - Hold left and right mouse buttons together to move the pet.
